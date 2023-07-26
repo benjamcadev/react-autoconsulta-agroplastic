@@ -2,6 +2,7 @@ import { useState } from "react"
 import packageJson from '../../package.json';
 import Imagen from "./Imagen"
 import Precio from "./Precio"
+import LogoInicial from '../img/Logo_inicial.jpg'
 console.log(packageJson.version);
 
 const Content = () => {
@@ -10,7 +11,7 @@ const Content = () => {
   const [descripcion,setDescripcion] = useState('BIENVENIDO')
   const [precio,setPrecio] = useState('')
   const [descuento,setDescuento] = useState('')
-  const [imagen, setImagen] = useState('./src/img/Logo_inicial.jpg')
+  const [imagen, setImagen] = useState(LogoInicial)
   const [isLoading, setIsLoading] = useState(false)
   
  
