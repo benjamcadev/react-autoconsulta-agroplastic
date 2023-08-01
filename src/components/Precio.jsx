@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getProducto } from "../helpers/getProducto"
-
+import LogoInicial from '../img/Logo_inicial.jpg'
 
 const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPrecio, descuento, setDescuento, setImagen, setIsLoading,isLoading}) => {
 
@@ -10,6 +10,16 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
   // useEffect(() => {
   //   console.log("useEffect");
   // },[])
+
+   const limpiarPantalla = (ms,e) => setTimeout(function(){
+    setPrecio('')
+    setDescuento('')
+    setImagen(LogoInicial)
+    setDescripcion('BIENVENIDO')
+    e.target.value = ''
+    e.target.focus()
+   }, ms);
+
 
   const handleKeyDown = async(e) => {
     
@@ -41,11 +51,17 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
           ...descuentos
         ]
        
-        )     
+        ) 
+      
+
       }else{
        setDescuento(false)
       }
-      
+
+
+        //ESPERAR UNOS 5 SEGUNDOS
+        await limpiarPantalla(8000,e)
+       
       }else{
         // Mostrar un error en pantalla
         setDescripcion('PRODUCTO NO ENCONTRADO 😔')
@@ -54,6 +70,9 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
         setImagen('')
         e.target.value = ''
         e.target.focus()
+
+        //ESPERAR UNOS 5 SEGUNDOS
+        await limpiarPantalla(8000,e)
       }
      
     }
@@ -78,7 +97,7 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
         : ''
       }
         
-        <input id="codigo" autoFocus  type="text" placeholder="input-codigo" className="opacity-0" onKeyDown={handleKeyDown}></input>
+        <input id="codigo" autoFocus  type="text" placeholder="input-codigo" className="opacity-100" onKeyDown={handleKeyDown}></input>
       
       
      
