@@ -18,7 +18,7 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
     setPrecio('')
     setDescuento('')
     setImagen(LogoInicial)
-    setDescripcion('BIENVENIDO')
+    setDescripcion('CONSULTE SU PRECIO AQUI')
     e.target.value = ''
     e.target.focus()
     
