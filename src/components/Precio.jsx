@@ -11,6 +11,9 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
   //   console.log("useEffect");
   // },[])
 
+  const [contador,setContador] = useState(0)
+
+
    const limpiarPantalla = (ms,e) => setTimeout(function(){
     setPrecio('')
     setDescuento('')
@@ -18,6 +21,7 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
     setDescripcion('BIENVENIDO')
     e.target.value = ''
     e.target.focus()
+    
    }, ms);
 
 
@@ -60,7 +64,11 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
 
 
         //ESPERAR UNOS 5 SEGUNDOS
-        await limpiarPantalla(8000,e)
+        clearTimeout(contador)
+        const idTime = limpiarPantalla(8000,e)
+        setContador(idTime)
+        
+        
        
       }else{
         // Mostrar un error en pantalla
