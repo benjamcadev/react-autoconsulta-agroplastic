@@ -8,7 +8,7 @@ console.log(packageJson.version);
 const Content = () => {
 
   const [codigo,setCodigo] = useState('')
-  const [descripcion,setDescripcion] = useState('CONSULTE SU PRECIO AQUI')
+  const [descripcion,setDescripcion] = useState('CONSULTE PRECIO AQUÍ')
   const [precio,setPrecio] = useState('')
   const [descuento,setDescuento] = useState('')
   const [imagen, setImagen] = useState(LogoInicial)
