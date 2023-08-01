@@ -97,7 +97,7 @@ const Precio = ({ codigo, setCodigo, descripcion, setDescripcion, precio, setPre
         : ''
       }
         
-        <input id="codigo" autoFocus  type="text" placeholder="input-codigo" className="opacity-100" onKeyDown={handleKeyDown}></input>
+        <input id="codigo" autoFocus  type="text" placeholder="input-codigo" className="opacity-0" onKeyDown={handleKeyDown}></input>
       
       
      
